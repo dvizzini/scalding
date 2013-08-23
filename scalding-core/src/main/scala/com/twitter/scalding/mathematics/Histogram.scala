@@ -1,6 +1,6 @@
 package com.twitter.scalding.mathematics
 
-class Histogram(map : Map[Double,Long], binWidth : Double) {
+class Histogram(val map : Map[Double,Long], binWidth : Double) {
   lazy val size = map.values.sum
   lazy val sum = map.foldLeft(0.0){case (acc, (bin, count)) => acc + bin * count} 
   lazy val keys = map.keys.toList.sorted
